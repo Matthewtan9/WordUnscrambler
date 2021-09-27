@@ -11,10 +11,21 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
+            string[] readFiles;
             // Implement this.
+            {
+                try
 
-            return null;
+                readFiles = File.ReadAllLines(filename);
+            }
 
+
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+                return readFiles;
         }
-    }
+    }       
 }

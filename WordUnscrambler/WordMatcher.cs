@@ -17,11 +17,25 @@ namespace WordUnscrambler
                 foreach (var word in wordList)
                 {
                     //scrambledWord already matches word
-                    if (scrambledWord.Equals(word, StringComparison.OrdinalIgnoreCase)) {
+                    if (scrambledWord.Equals(word, StringComparison.OrdinalIgnoreCase))
+                    {
                         matchedWords.Add(BuildMatchedWord(scrambledWord, word));
                     }
                     else
                     {
+                        char[] scrambledWordArray = scrambledWord.ToCharArray();
+                        char[] wordArray = word.ToCharArray();
+
+                        Array.Sort(scrambledWordArray);
+                        Array.Sort(wordArray);
+
+                        string sortedScrambledWord = new string(scrambledWordArray);
+                        string sortedWord = new string(wordArray);
+
+                        if (sortedScrambledWord.Equals(sortedWord, StringComparison.OrdinalIgnoreCase))
+                        {
+                            matchedWords.Add(BuildMatchedWord(sortedScrambledWord, word));
+                        }
                     }
                 }
             }
