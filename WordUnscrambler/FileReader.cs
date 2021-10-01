@@ -15,7 +15,7 @@ namespace WordUnscrambler
             // Implement this.
             {
                 try
-
+                { 
                 readFiles = File.ReadAllLines(filename);
             }
 
