@@ -13,9 +13,9 @@ namespace WordUnscrambler
         {
             string[] readFiles;
             // Implement this.
+
+            try
             {
-                try
-                { 
                 readFiles = File.ReadAllLines(filename);
             }
 
@@ -25,7 +25,8 @@ namespace WordUnscrambler
                 throw new Exception(ex.Message);
             }
 
-                return readFiles;
+            return readFiles;
         }
-    }       
+    }
 }
+

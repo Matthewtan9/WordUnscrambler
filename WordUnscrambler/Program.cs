@@ -23,7 +23,7 @@ namespace WordUnscrambler
 
                     Console.WriteLine(Constants.input);
     
-                    string option1 = Console.ReadLine() ?? throw new Exception(Constants.error);
+                    String option1 = Console.ReadLine() ?? throw new Exception(Constants.error);
 
                     while (option1 != Constants.char1 && option1 != Constants.char2 && option1 != Constants.char3 && option1 != Constants.char4)
                     {
@@ -99,7 +99,9 @@ namespace WordUnscrambler
 
             if (matchedWords.Any())
             {
-                foreach (var matchedword in matchedWords) 
+                foreach (var matchedword in matchedWords)
+                {
+
                     Console.WriteLine(Constants.match,matchedword.Word, matchedword.ScrambledWord);
 
             }
@@ -109,7 +111,7 @@ namespace WordUnscrambler
         {
             Console.WriteLine(Constants.nomatch);
         }
-    Console.ReadLine();
+             Console.ReadLine();
             
 
         }
